@@ -2,15 +2,28 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n, res, div, mul;
     cin >> n;
 
     for (int i = 1; i <= n; i++)
     {
-        if (i == 1 || i == n)
-            cout << 1 << " ";
+        for (int j = 1; j <= i; j++)
+        {
+            if (j == 1 || j == n)
+            {
+                cout << 1 << " ";
+                res = 1, mul = i - 1, div = 1;
+            }
+            else
+            {
+                res *= mul--;
+                res /= div++;
+                cout << res << " ";
+            }
+        }
 
-        
+        cout << endl;
     }
+
     return 0;
 }

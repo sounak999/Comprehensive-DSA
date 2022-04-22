@@ -2,24 +2,46 @@
 using namespace std;
 int main()
 {
-    int n, res, div, mul;
+    int n;
     cin >> n;
+
+    for (int i = n; i >= 1; i--)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "* ";
+        }
+
+        int sp = 2 * (n - i);
+        while (sp--)
+        {
+            cout << "  ";
+        }
+
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "* ";
+        }
+
+        cout << endl;
+    }
 
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= i; j++)
         {
-            if (j == 1 || j == n)
-            {
-                cout << 1 << " ";
-                res = 1, mul = i - 1, div = 1;
-            }
-            else
-            {
-                res *= mul--;
-                res /= div++;
-                cout << res << " ";
-            }
+            cout << "* ";
+        }
+
+        int sp = 2 * (n - i);
+        while (sp--)
+        {
+            cout << "  ";
+        }
+
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "* ";
         }
 
         cout << endl;
