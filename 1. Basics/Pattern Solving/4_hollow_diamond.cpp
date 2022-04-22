@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
+    {
+        // spaces
+        int sp = n - i;
+        while (sp--)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 1; j <= i; j++)
+        {
+            if (j == 1 || j == i)
+                cout << "* ";
+            else
+                cout << "  ";
+        }
+
+        cout << endl;
+    }
+
+    for (int i = n; i >= 1; i--)
+    {
+        // spaces
+        int sp = n - i;
+        while (sp--)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 1; j <= i; j++)
+        {
+            if (j == 1 || j == i)
+                cout << "* ";
+            else
+                cout << "  ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
