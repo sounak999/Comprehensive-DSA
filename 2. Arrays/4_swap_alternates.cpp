@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void reverseArray(int arr[], int start, int end)
+void swapAlternates(int arr[], int size)
 {
-    while (start < end)
+    for (int i = 0; i < size - 1; i += 2)
     {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+        swap(arr[i], arr[i + 1]);
     }
 }
 
@@ -27,20 +25,19 @@ int main()
         cin >> arr[i];
     }
 
-    cout << "Array before reversing -> ";
+    cout << "Before swapping alternates -> ";
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
 
-    reverseArray(arr, 0, n - 1);
+    swapAlternates(arr, n);
 
-    cout << "Array after reversing -> ";
+    cout << "After swapping alternates -> ";
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
-
     return 0;
 }
